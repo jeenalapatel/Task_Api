@@ -17,7 +17,10 @@ namespace TaskApi.Controllers
         public async Task<ActionResult> CreateUser()
         {
         }
-        
+        [HttpPost]
+        public async Task<ActionResult> CreateUser()
+        {
+        }
         //can't change Id
         //will get data using emailId
         [HttpPut("{username}")]
