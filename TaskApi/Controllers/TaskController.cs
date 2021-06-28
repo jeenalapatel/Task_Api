@@ -15,11 +15,6 @@ namespace TaskApi.Controllers
         {
         }
 
-        //will get data using emailId & TaskId
-        [HttpGet("{id:int}")]
-        public async Task<ActionResult> GetTaskById(int id)
-        {
-        }
 
         [HttpGet]
         public async Task<ActionResult> GetAllTask()
@@ -42,16 +37,7 @@ namespace TaskApi.Controllers
         {
         }
 
-        [HttpGet("{id:int}/subtask/{id:int}")]
-        public async Task<ActionResult> GetSubTaskById(int id)
-        {
-            
-        }
-        [HttpGet("{id:int}/subtask")]
-        public async Task<ActionResult> GetAllSubTask()
-        {
-            
-        }
+       
         
     }
 }
