@@ -31,15 +31,27 @@ namespace TaskApi.Controllers
         public async Task<ActionResult> UpdateTaskInfo(int id, TaskModel model)
         {
         }
-        [HttpPost]
-        public async Task<ActionResult> CreateMaterialType(SubTaskModel model)
+        [HttpPost("{id:int}")]
+        public async Task<ActionResult> CreateSubTask(SubTaskModel model)
         {
         }
 
         //make changes using SubTaskId
-        [HttpPut("{id:int}")]
+        [HttpPut("{id:int}/SubTask/{id:int}")]
         public async Task<ActionResult> UpdateSubTaskInfo(int id, SubTaskModel model)
         {
         }
+
+        [HttpGet("{id:int}/SubTask/{id:int}")]
+        public async Task<ActionResult> GetSubTaskById(int id)
+        {
+            
+        }
+        [HttpGet("{id:int}/SubTask")]
+        public async Task<ActionResult> GetAllSubTask()
+        {
+            
+        }
+        
     }
 }
