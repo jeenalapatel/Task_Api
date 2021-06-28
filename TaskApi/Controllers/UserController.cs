@@ -19,15 +19,15 @@ namespace TaskApi.Controllers
             
         }
         //get user using EmailID
-        [HttpGet("{EmailId}")]
-        public async Task<ActionResult> GetUserByPassword(string EmailId)
+        [HttpGet]
+        public async Task<ActionResult> GetUserByPassword()
         {
             
         }
         //can't change Id
         //will get data using emailId
-        [HttpPut("{EmailId}")]
-        public async Task<ActionResult>UpdateUserInfo(string EmailId)
+        [HttpPut]
+        public async Task<ActionResult>UpdateUserInfo()
         {
             
         }

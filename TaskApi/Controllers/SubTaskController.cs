@@ -8,13 +8,13 @@ namespace TaskApi.Controllers
     public class SubTaskController:ControllerBase
     {
         [HttpPost]
-        public async Task<ActionResult> CreateMaterialType()
+        public async Task<ActionResult> CreateMaterialType(SubTaskModel model)
         {
             
         }
         //make changes using SubTaskId
         [HttpPut("{id:int}")]
-        public async Task<ActionResult>UpdateSubTaskInfo(int id ,TaskModel model)
+        public async Task<ActionResult>UpdateSubTaskInfo(int id ,SubTaskModel model)
         {
             
         }
