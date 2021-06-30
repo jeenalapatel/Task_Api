@@ -13,31 +13,34 @@ namespace TaskApi.Controllers
         [HttpPost]
         public async Task<ActionResult> CreateTask(TaskModel model)
         {
+            return Ok();
         }
 
 
         [HttpGet]
         public async Task<ActionResult> GetAllTask()
         {
+            return Ok();
         }
 
         //will get data using emailId & TaskId
         [HttpPut("{id:int}")]
         public async Task<ActionResult> UpdateTaskInfo(int id, TaskModel model)
         {
+            return Ok();
         }
+
         [HttpPost("{id:int}/subtask")]
-        public async Task<ActionResult> CreateSubTask(SubTaskModel model)
+        public async Task<ActionResult> CreateSubTask()//SubTaskModel model)
         {
+            return Ok();
         }
 
         //make changes using SubTaskId
         [HttpPut("{id:int}/subtask/{id:int}")]
-        public async Task<ActionResult> UpdateSubTaskInfo(int id, SubTaskModel model)
+        public async Task<ActionResult> UpdateSubTaskInfo(int id)//, SubTaskModel model)
         {
+            return Ok();
         }
-
-       
-        
     }
 }

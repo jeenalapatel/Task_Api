@@ -16,16 +16,21 @@ namespace TaskApi.Controllers
         [HttpPost("auth")]
         public async Task<ActionResult> CreateUser()
         {
+            return Ok();
         }
+
         [HttpPost]
-        public async Task<ActionResult> CreateUser()
+        public async Task<ActionResult> AuthenticateUser()
         {
+            return Ok();
         }
+
         //can't change Id
         //will get data using emailId
         [HttpPut("{username}")]
         public async Task<ActionResult> UpdateUserInfo(string UserName)
         {
+            return Ok();
         }
     }
 }
