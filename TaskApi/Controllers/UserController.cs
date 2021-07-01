@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using TaskApi.Entities;
 
@@ -50,21 +51,15 @@ namespace TaskApi.Controllers
         [HttpPost("auth")]
         public async Task<IActionResult> AuthenticateUser(User user)
         {
-            try
-            {
-                var username = _context.Users.Find(user.UserName);
-                if (username == null) return BadRequest("user not exist");
-                if (username.Password.Equals(user.Password))
-                {
-                    return Ok();
-                }
-
-                return BadRequest();
-            }
-            catch (Exception e)
+            var ans = _context.Users.SingleOrDefaultAsync(s =>
+                s.Password == user.Password && s.UserName == user.UserName);
+            if (ans != null)
+                return Ok();
+            else
             {
                 return BadRequest();
             }
+            
         }
 
         //can't change Id
