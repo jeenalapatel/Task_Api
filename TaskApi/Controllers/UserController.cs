@@ -28,7 +28,7 @@ namespace TaskApi.Controllers
         {
             try
             {
-                var newUser = _context.Users.Find(user.UserName);
+                var newUser = _context.Users.SingleOrDefaultAsync(s=>s.UserName==user.UserName);
                 if (newUser != null)
                 {
                     return BadRequest($"{newUser} is exist,give another username");
@@ -69,7 +69,7 @@ namespace TaskApi.Controllers
         {
             try
             {
-                var userDetail = _context.Users.Find(username);
+                var userDetail = _context.Users.SingleOrDefaultAsync(s=>s.UserName==user.UserName);
                 if (userDetail == null) return BadRequest("user could not be found");
                 _context.Add(user);
                 if (await _context.SaveChangesAsync() != 0)
